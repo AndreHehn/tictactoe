@@ -1,5 +1,16 @@
 let fields = [];
 let currentPlayer = 0;
+let possibleWin =[
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6],
+    ]
+
 //player equal cross ....player odd circle
 function stampSign(id) {
 
@@ -19,6 +30,7 @@ function crossMove(id) {
     currentPlayer++;
 }
 
+
 function circleMove(id) {
     fields[id] = 'circle';
     document.getElementById('circle' + id).classList.remove('d-none');
@@ -29,59 +41,26 @@ function circleMove(id) {
 
 function checkWin() {
     let winner;
-    if (fields[0] == fields[1] && fields[1] == fields[2]) {
-        winner = fields[0];
+    let winning= false;
+    for (let i = 0; i < possibleWin.length; i++) {
+        const element = possibleWin[i];
+        if (fields[element[0]] == fields[element[1]] && fields[element[1]] == fields[element[2]]) { winner = fields[element[0]]; winning = true;}
     }
-    else if (fields[3] == fields[4] && fields[4] == fields[5]) {
-        winner = fields[3];
-    }
-    else if (fields[6] == fields[7] && fields[7] == fields[8]) {
-        winner = fields[6];
-    }
-    else if (fields[0] == fields[3] && fields[3] == fields[6]) {
-        winner = fields[0];
-    }
-    else if (fields[1] == fields[4] && fields[4] == fields[7]) {
-        winner = fields[1];
-    }
-    else if (fields[2] == fields[5] && fields[5] == fields[8]) {
-        winner = fields[2];
-    }
-    else if (fields[0] == fields[4] && fields[4] == fields[8]) {
-        winner = fields[0];
-    }
-    else if (fields[2] == fields[4] && fields[4] == fields[6]) {
-        winner = fields[2];
-    }
-    else if(draw()){
-        winner ='draw';
-    }
+    if(currentPlayer==8 && !winning){ winner ='draw';}
     showWinner(winner);
 };
 
-function draw(){
-    let allFieldsStamped = true;
-for (let i = 0; i < fields.length; i++) {
-    const element = fields[i];
-    if (element == null){
-        allFieldsStamped =false;
-        return allFieldsStamped;
+
+function showWinner(winner) {
+    if (winner) {
+        makeUnclickable();
+        console.log(winner);
     }
 }
-return allFieldsStamped;
-}
 
-function showWinner(winner){
-if(winner){
-makeUnclickable();
-console.log(winner);
-}
-}
 
-function makeUnclickable(){
-for (let i = 0; i < 9; i++) {
-   document.getElementById('circle'+i).parentNode.setAttribute('onclick', '');
-    
-}
-
+function makeUnclickable() {
+    for (let i = 0; i < 9; i++) {
+        document.getElementById('circle' + i).parentNode.setAttribute('onclick', '');
+    }
 }
