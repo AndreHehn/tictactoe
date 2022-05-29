@@ -12,53 +12,58 @@
 </head>
 
 <body>
+    <header id="header">
+        <h1 class="h1-left">It's your turn:</h1>
+        <img class="cross" id="player" src="./img/cross.png">
 
-
-    <table>
-        <tr>
-            <td onclick="stampSign(0)">
-                <img id="circle0" class="circle d-none" src="./img/circle.png">
-                <img id="cross0" class="cross d-none" src="./img/cross.png">
-            </td>
-            <td onclick="stampSign(1)">
-                <img id="circle1" class="circle d-none" src="./img/circle.png">
-                <img id="cross1" class="cross d-none" src="./img/cross.png">
-            </td>
-            <td onclick="stampSign(2)">
-                <img  id="circle2" class="circle d-none" src="./img/circle.png">
-                <img id="cross2" class="cross d-none" src="./img/cross.png">
-            </td>
-        </tr>
-        <tr>
-            <td onclick="stampSign(3)">
-                <img id="circle3" class="circle d-none" src="./img/circle.png">
-                <img id="cross3" class="cross d-none" src="./img/cross.png">
-            </td>
-            <td onclick="stampSign(4)">
-                <img id="circle4" class="circle d-none" src="./img/circle.png">
-                <img id="cross4" class="cross d-none" src="./img/cross.png">
-            </td>
-            <td onclick="stampSign(5)">
-                <img id="circle5" class="circle d-none" src="./img/circle.png">
-                <img id="cross5" class="cross d-none" src="./img/cross.png">
-            </td>
-        </tr>
-        <tr>
-            <td onclick="stampSign(6)">
-                <img id="circle6" class="circle d-none" src="./img/circle.png">
-                <img id="cross6" class="cross d-none" src="./img/cross.png">
-            </td>
-            <td onclick="stampSign(7)">
-                <img  id="circle7" class="circle d-none" src="./img/circle.png">
-                <img id="cross7" class="cross d-none" src="./img/cross.png">
-            </td>
-            <td onclick="stampSign(8)">
-                <img  id="circle8" class="circle d-none" src="./img/circle.png">
-                <img id="cross8" class="cross d-none" src="./img/cross.png">
-            </td>
-        </tr>
-
-    </table>
+    </header>
+    <main>
+        <table>
+            <tr>
+                <td onclick="stampSign(0)">
+                    <img id="circle0" class="circle d-none" src="./img/circle.png">
+                    <img id="cross0" class="cross d-none" src="./img/cross.png">
+                </td>
+                <td onclick="stampSign(1)">
+                    <img id="circle1" class="circle d-none" src="./img/circle.png">
+                    <img id="cross1" class="cross d-none" src="./img/cross.png">
+                </td>
+                <td onclick="stampSign(2)">
+                    <img id="circle2" class="circle d-none" src="./img/circle.png">
+                    <img id="cross2" class="cross d-none" src="./img/cross.png">
+                </td>
+            </tr>
+            <tr>
+                <td onclick="stampSign(3)">
+                    <img id="circle3" class="circle d-none" src="./img/circle.png">
+                    <img id="cross3" class="cross d-none" src="./img/cross.png">
+                </td>
+                <td onclick="stampSign(4)">
+                    <img id="circle4" class="circle d-none" src="./img/circle.png">
+                    <img id="cross4" class="cross d-none" src="./img/cross.png">
+                </td>
+                <td onclick="stampSign(5)">
+                    <img id="circle5" class="circle d-none" src="./img/circle.png">
+                    <img id="cross5" class="cross d-none" src="./img/cross.png">
+                </td>
+            </tr>
+            <tr>
+                <td onclick="stampSign(6)">
+                    <img id="circle6" class="circle d-none" src="./img/circle.png">
+                    <img id="cross6" class="cross d-none" src="./img/cross.png">
+                </td>
+                <td onclick="stampSign(7)">
+                    <img id="circle7" class="circle d-none" src="./img/circle.png">
+                    <img id="cross7" class="cross d-none" src="./img/cross.png">
+                </td>
+                <td onclick="stampSign(8)">
+                    <img id="circle8" class="circle d-none" src="./img/circle.png">
+                    <img id="cross8" class="cross d-none" src="./img/cross.png">
+                </td>
+            </tr>
+        </table>
+        <div class="buttons" id="buttons"></div>
+    </main>
 </body>
 
 </html>

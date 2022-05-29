@@ -1,7 +1,9 @@
-body{
-margin:0;
-background-image: url("./img/background.jpg");
-
+body {
+    margin: 0;
+    background-image: url("./img/background.jpg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 tr {
@@ -11,16 +13,18 @@ tr {
 td {
     height: 135px;
     width: 135px;
-    text-align: center; 
+    text-align: center;
     vertical-align: middle;
     cursor: pointer;
 }
 
-td:hover{
+td:hover {
 
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0, 0, 0, 0.1);
 }
+
 table {
+    margin-top: 96px;
     border-collapse: collapse;
 }
 
@@ -45,14 +49,28 @@ table tr td:last-child {
 }
 
 .cross {
-height: 135px;
-width: 135px;
+    height: 115px;
+    width: 115px;
 }
-.circle{
-    height:105px;
-    width:105px;
+
+.circle {
+    height: 85px;
+    width: 85px;
 }
 
 .d-none {
     display: none;
+}
+
+header {
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.h1-left {
+    margin-right: 32px;
+}
+.h1-right {
+    margin-left: 32px;
 }
