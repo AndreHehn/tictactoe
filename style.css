@@ -152,11 +152,6 @@ header {
     gap: 72px;
 }
 
-
-
-
-
-
 .horizontal-line {
     border-radius: 7px;
     height: 14px;
@@ -238,5 +233,7 @@ header {
     transform: rotateY(0deg) rotate(-45deg);
     top: 427px;
     margin-left: -38px;
-
 }
+
+@media(max-width:430px){}
+@media(max-height:900px){}
