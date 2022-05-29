@@ -11,57 +11,84 @@
     <title>tic tac toe</title>
 </head>
 
-<body>
-    <header id="header">
+<body onload="renderWins()">
+    <header id="header"><div class="header" id="current-player">
         <h1 class="h1-left">It's your turn:</h1>
-        <img class="cross" id="player" src="./img/cross.png">
-
+        <img class="cross-top" id="player" src="./img/cross.png"></div>
+<div class="header" id = "winning"></div>
     </header>
     <main>
-        <table>
-            <tr>
-                <td onclick="stampSign(0)">
-                    <img id="circle0" class="circle d-none" src="./img/circle.png">
-                    <img id="cross0" class="cross d-none" src="./img/cross.png">
-                </td>
-                <td onclick="stampSign(1)">
-                    <img id="circle1" class="circle d-none" src="./img/circle.png">
-                    <img id="cross1" class="cross d-none" src="./img/cross.png">
-                </td>
-                <td onclick="stampSign(2)">
-                    <img id="circle2" class="circle d-none" src="./img/circle.png">
-                    <img id="cross2" class="cross d-none" src="./img/cross.png">
-                </td>
-            </tr>
-            <tr>
-                <td onclick="stampSign(3)">
-                    <img id="circle3" class="circle d-none" src="./img/circle.png">
-                    <img id="cross3" class="cross d-none" src="./img/cross.png">
-                </td>
-                <td onclick="stampSign(4)">
-                    <img id="circle4" class="circle d-none" src="./img/circle.png">
-                    <img id="cross4" class="cross d-none" src="./img/cross.png">
-                </td>
-                <td onclick="stampSign(5)">
-                    <img id="circle5" class="circle d-none" src="./img/circle.png">
-                    <img id="cross5" class="cross d-none" src="./img/cross.png">
-                </td>
-            </tr>
-            <tr>
-                <td onclick="stampSign(6)">
-                    <img id="circle6" class="circle d-none" src="./img/circle.png">
-                    <img id="cross6" class="cross d-none" src="./img/cross.png">
-                </td>
-                <td onclick="stampSign(7)">
-                    <img id="circle7" class="circle d-none" src="./img/circle.png">
-                    <img id="cross7" class="cross d-none" src="./img/cross.png">
-                </td>
-                <td onclick="stampSign(8)">
-                    <img id="circle8" class="circle d-none" src="./img/circle.png">
-                    <img id="cross8" class="cross d-none" src="./img/cross.png">
-                </td>
-            </tr>
-        </table>
+            <div id="win0" class="horizontal-line ho-top d-none"></div>
+            <div id="win1" class="horizontal-line ho-mid d-none"></div>
+            <div id="win2" class="horizontal-line ho-bot d-none"></div>
+            <div id="win3" class="vertical-line ve-left d-none"></div>
+            <div id="win4" class="vertical-line ve-mid d-none"></div>
+            <div id="win5" class="vertical-line ve-right d-none"></div>
+            <div id="win6" class="diagonal-line dia-fall d-none"></div>
+            <div id="win7" class="diagonal-line dia-rise d-none"></div>
+            
+            <table>
+                <tr>
+                    <td onclick="stampSign(0)">
+                        <img id="circle0" class="circle d-none" src="./img/circle.png">
+                        <img id="cross0" class="cross d-none" src="./img/cross.png">
+                    </td>
+                    <td onclick="stampSign(1)">
+                        <img id="circle1" class="circle d-none" src="./img/circle.png">
+                        <img id="cross1" class="cross d-none" src="./img/cross.png">
+                        
+                    </td>
+                    <td onclick="stampSign(2)">
+                        <img id="circle2" class="circle d-none" src="./img/circle.png">
+                        <img id="cross2" class="cross d-none" src="./img/cross.png">
+                    </td>
+                </tr>
+                <tr>
+                    <td onclick="stampSign(3)">
+                        <img id="circle3" class="circle d-none" src="./img/circle.png">
+                        <img id="cross3" class="cross d-none" src="./img/cross.png">
+                        
+                    </td>
+                    <td onclick="stampSign(4)">
+                        <img id="circle4" class="circle d-none" src="./img/circle.png">
+                        <img id="cross4" class="cross d-none" src="./img/cross.png">
+
+                    </td>
+                    <td onclick="stampSign(5)">
+                        <img id="circle5" class="circle d-none" src="./img/circle.png">
+                        <img id="cross5" class="cross d-none" src="./img/cross.png">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td onclick="stampSign(6)">
+                        <img id="circle6" class="circle d-none" src="./img/circle.png">
+                        <img id="cross6" class="cross d-none" src="./img/cross.png">
+                    </td>
+                    <td onclick="stampSign(7)">
+                        <img id="circle7" class="circle d-none" src="./img/circle.png">
+                        <img id="cross7" class="cross d-none" src="./img/cross.png">
+
+                    </td>
+                    <td onclick="stampSign(8)">
+                        <img id="circle8" class="circle d-none" src="./img/circle.png">
+                        <img id="cross8" class="cross d-none" src="./img/cross.png">
+                    </td>
+                </tr>
+            </table>
+            
+        <div class="evaluation">
+            <div class="evaluation-sub">
+                <img class="cross-bottom" src="./img/cross.png">
+                <h2 id="crosswin"></h2>
+                <h2>&nbsp;win(s)</h2>
+            </div>
+            <div class="evaluation-sub">
+                <img class="circle-bottom" src="./img/circle.png">
+                <h2 id="circlewin"></h2>
+                <h2>&nbsp;win(s)</h2>
+            </div>
+        </div>
         <div class="buttons" id="buttons"></div>
     </main>
 </body>

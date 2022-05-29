@@ -1,4 +1,5 @@
 body {
+    font-family: 'calibri';
     margin: 0;
     background-image: url("./img/background.jpg");
     display: flex;
@@ -7,12 +8,13 @@ body {
 }
 
 tr {
-    width: 405px;
+    width: 408px;
+    height: 136px;
 }
 
 td {
-    height: 135px;
-    width: 135px;
+    height: 136px;
+    width: 136px;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
@@ -59,10 +61,14 @@ table tr td:last-child {
 }
 
 .d-none {
-    display: none;
+    display: none !important;
 }
 
 header {
+    height: 128px;
+}
+
+.header {
     margin-top: 48px;
     display: flex;
     align-items: center;
@@ -71,6 +77,166 @@ header {
 .h1-left {
     margin-right: 32px;
 }
+
 .h1-right {
     margin-left: 32px;
+}
+
+.circle-top {
+    height: 60px;
+    width: 60px;
+}
+
+.cross-top {
+
+    height: 80px;
+    width: 80px;
+}
+
+.circle-bottom {
+    height: 32px;
+    width: 32px;
+}
+
+.cross-bottom {
+    height: 40px;
+    width: 40px;
+}
+
+.circle-button {
+    height: 14px;
+    width: 14px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.cross-button {
+    height: 20px;
+    width: 20px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.buttons {
+    margin-top: 32px;
+    ;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 8px;
+    border-radius: 8px;
+    border-color: rgb(236, 236, 236);
+    border-style: solid;
+    cursor: pointer;
+}
+
+.buttons :hover {
+    background-color: rgb(236, 236, 236);
+}
+
+.evaluation-sub {
+    display: flex;
+    align-items: center;
+}
+
+.evaluation {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 72px;
+}
+
+
+
+
+
+
+.horizontal-line {
+    border-radius: 7px;
+    height: 14px;
+    width: 360px;
+    background-color: rgba(0, 255, 0, 0.5);
+}
+
+.ho-top {
+    position: absolute;
+    left: auto;
+    right: auto;
+    top: 286px;
+    margin-left: 32px;
+}
+
+.ho-mid {
+    position: absolute;
+    left: auto;
+    right: auto;
+    top: 427px;
+    margin-left: 32px;
+}
+
+.ho-bot {
+    position: absolute;
+    left: auto;
+    right: auto;
+    top: 570px;
+    margin-left: 32px;
+}
+
+.vertical-line {
+    border-radius: 7px;
+    height: 360px;
+    width: 14px;
+    background-color: rgba(0, 255, 0, 0.5);
+}
+
+.ve-left {
+    position: absolute;
+    left: auto;
+    right: auto;
+    top: 256px;
+    margin-left: 65px;
+}
+
+.ve-mid {
+    position: absolute;
+    left: auto;
+    right: auto;
+    top: 256px;
+    margin-left: 209px;
+}
+
+.ve-right {
+    position: absolute;
+    left: auto;
+    right: auto;
+    top: 256px;
+    margin-left: 351px;
+}
+
+.diagonal-line {
+    border-radius: 7px;
+    height: 14px;
+    width: 501px;
+    background-color: rgba(0, 255, 0, 0.5);
+}
+
+.dia-fall {
+    position: absolute;
+    transform: rotateY(0deg) rotate(45deg);
+    top: 427px;
+    margin-left: -38px;
+}
+
+.dia-rise {
+    position: absolute;
+    transform: rotateY(0deg) rotate(-45deg);
+    top: 427px;
+    margin-left: -38px;
+
 }

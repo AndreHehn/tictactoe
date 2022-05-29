@@ -1,6 +1,10 @@
 let fields = [];
 let currentPlayer = 0;
 let winner;
+let crossWin = 0;
+let circleWin = 0;
+let position;
+let winning = false;
 let possibleWin = [
     [0, 1, 2],
     [3, 4, 5],
@@ -14,12 +18,11 @@ let possibleWin = [
 
 //player equal cross ....player odd circle
 function stampSign(id) {
-
     if (currentPlayer % 2 == 0 && fields[id] == null) {
         crossMove(id);
     }
     else if (!currentPlayer % 2 == 0 && fields[id] == null) {
-        circleMove(id)
+        circleMove(id);
     }
 }
 
@@ -28,7 +31,7 @@ function crossMove(id) {
     fields[id] = 'cross';
     document.getElementById('cross' + id).classList.remove('d-none');
     checkWin();
-    if (!winner) {
+    if (winning) {
         currentPlayer++;
         changePlayerToCircle();
     }
@@ -39,7 +42,7 @@ function circleMove(id) {
     fields[id] = 'circle';
     document.getElementById('circle' + id).classList.remove('d-none');
     checkWin();
-    if (!winner) {
+    if (winning) {
         currentPlayer++;
         changePlayerToCross();
     }
@@ -48,58 +51,71 @@ function circleMove(id) {
 
 
 function changePlayerToCross() {
-    document.getElementById('player').classList.remove("circle");
-    document.getElementById('player').classList.add("cross");
+    document.getElementById('player').classList.remove("circle-top");
+    document.getElementById('player').classList.add("cross-top");
     document.getElementById('player').src = "./img/cross.png";
 }
 
 
 function changePlayerToCircle() {
-    document.getElementById('player').classList.remove("cross");
-    document.getElementById('player').classList.add("circle");
+    document.getElementById('player').classList.remove("cross-top");
+    document.getElementById('player').classList.add("circle-top");
     document.getElementById('player').src = "./img/circle.png";
 }
 
 
 function checkWin() {
-
-    let winning = false;
     for (let i = 0; i < possibleWin.length; i++) {
-        const element = possibleWin[i];
-        if (fields[element[0]] == fields[element[1]] && fields[element[1]] == fields[element[2]]) { winner = fields[element[0]]; winning = true; }
+        if (fields[possibleWin[i][0]] == fields[possibleWin[i][1]] && fields[possibleWin[i][1]] == fields[possibleWin[i][2]]) {
+            winner = fields[possibleWin[i][0]];
+            winning = true;
+            position = i;
+            showWinner(winner);
+        }
     }
-    if (currentPlayer == 8 && !winning) { winner = 'draw'; }
-    showWinner(winner);
-    return winner;
+    if (
+        currentPlayer == 8 && winning) {
+            winner = 'draw'; position = null;
+        showWinner(winner);
+    }
 };
 
 
 function showWinner(winner) {
     if (winner) {
         makeUnclickable();
-        console.log(winner);
         renderHtmlForShowWinner(winner);
         renderHtmlButtonsForShowWinner();
+        if (winner == 'circle') { circleWin++; }
+        if (winner == 'cross') { crossWin++; }
+        renderWins();
+        showLine();
     }
 }
 
-function renderHtmlButtonsForShowWinner(){
-document.getElementById('buttons').innerHTML=``;
-//needs to be filled
+
+function renderHtmlButtonsForShowWinner() {
+    document.getElementById('buttons').innerHTML = `
+<div class="button" onclick="newGame(0)"><span>start new game with </span><img class="cross-button" src ="./img/cross.png"><span>first</span></div>
+<div class="button" onclick="newGame(1)"><span>start new game with </span><img class="circle-button" src ="./img/circle.png"><span>first</span></div>
+`;
 }
 
-function renderHtmlForShowWinner(winner){
+
+function renderHtmlForShowWinner(winner) {
+    document.getElementById('current-player').classList.add('d-none');
+    document.getElementById('winning').classList.remove('d-none');
     if (winner == 'draw') {
-        document.getElementById('header').innerHTML = `<img class ="cross" src="./img/cross.png"><img class ="circle" src="./img/circle.png"><h1 class="h1-right">DRAW</h1>`;
+        document.getElementById('winning').innerHTML = `<img class ="cross-top" src="./img/cross.png"><img class ="circle-top" src="./img/circle.png"><h1 class="h1-right">DRAW</h1>`;
     }
     else if (winner == 'circle') {
-        document.getElementById('header').innerHTML = `<img class ="circle" src="./img/circle.png"><h1 class="h1-right">WINS</h1>`;
+        document.getElementById('winning').innerHTML = `<img class ="circle-top" src="./img/circle.png"><h1 class="h1-right">WINS</h1>`;
     }
     else if (winner == 'cross') {
-        document.getElementById('header').innerHTML = `<img class ="cross" src="./img/cross.png"><h1 class="h1-right">WINS</h1>`;
+        document.getElementById('winning').innerHTML = `<img class ="cross-top" src="./img/cross.png"><h1 class="h1-right">WINS</h1>`;
     }
-
 }
+
 
 function makeUnclickable() {
     for (let i = 0; i < 9; i++) {
@@ -107,6 +123,48 @@ function makeUnclickable() {
     }
 }
 
-//functions 4 buttons
 
-//functions for winningline
+function renderWins() {
+    document.getElementById('crosswin').innerHTML = `: ${crossWin} `;
+    document.getElementById('circlewin').innerHTML = `: ${circleWin} `;
+}
+
+
+function newGame(n) {
+    contentForNewGame()
+    for (let i = 0; i < 9; i++) {
+        contentForForLoopNewGame(i);
+    }
+    if (n == 0) {
+        document.getElementById('player').src = "./img/cross.png";
+    }
+    else if (n == 1) {
+        document.getElementById('player').src = "./img/circle.png";
+    }
+}
+
+
+function contentForNewGame(){
+    fields = [];
+    currentPlayer = n;
+    document.getElementById('current-player').classList.remove('d-none');
+    document.getElementById('winning').innerHTML ='';
+    document.getElementById('winning').classList.remove('d-none');
+}
+
+
+function contentForForLoopNewGame(i) {
+    if (i < 8) {
+        document.getElementById('win' + i).classList.add('d-none');
+    }
+    document.getElementById('circle' + i).classList.add('d-none');
+    document.getElementById('cross' + i).classList.add('d-none');
+    document.getElementById('circle' + i).parentNode.setAttribute('onclick', `stampSign(${i})`);
+}
+
+
+function showLine() {
+    if (winner !== 'draw') {
+        document.getElementById('win' + position).classList.remove('d-none');
+    }
+}
