@@ -131,7 +131,7 @@ function renderWins() {
 
 
 function newGame(n) {
-    contentForNewGame()
+    contentForNewGame(n);
     for (let i = 0; i < 9; i++) {
         contentForForLoopNewGame(i);
     }
@@ -144,7 +144,7 @@ function newGame(n) {
 }
 
 
-function contentForNewGame(){
+function contentForNewGame(n){
     fields = [];
     currentPlayer = n;
     document.getElementById('current-player').classList.remove('d-none');
@@ -165,6 +165,13 @@ function contentForForLoopNewGame(i) {
 
 function showLine() {
     if (winner !== 'draw') {
-        document.getElementById('win' + position).classList.remove('d-none');
+        if(position <3)
+        {document.getElementById('win' + position).style.transform = 'scaleX(1.0)';}
+        else if (position>2 && position<6)
+        {document.getElementById('win' + position).style.transform = 'scaleY(1.0)';}
+        else if (position ==6)
+        {document.getElementById('win' + position).style.transform = 'rotate(45deg) scaleX(1.0)';}
+        else if (position ==7)
+        {document.getElementById('win' + position).style.transform = 'rotate(-45deg) scaleX(1.0)';}
     }
 }

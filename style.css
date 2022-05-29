@@ -153,6 +153,8 @@ header {
 }
 
 .horizontal-line {
+    transform: scaleX(0.0);
+    transition: 225ms ease-in-out;
     border-radius: 7px;
     height: 14px;
     width: 360px;
@@ -184,6 +186,8 @@ header {
 }
 
 .vertical-line {
+    transform: scaleY(0.0);
+    transition: 225ms ease-in-out;
     border-radius: 7px;
     height: 360px;
     width: 14px;
@@ -215,6 +219,7 @@ header {
 }
 
 .diagonal-line {
+
     border-radius: 7px;
     height: 14px;
     width: 501px;
@@ -223,17 +228,20 @@ header {
 
 .dia-fall {
     position: absolute;
-    transform: rotateY(0deg) rotate(45deg);
+    transition: 225ms ease-in-out;
+    transform: rotate(45deg) scaleX(0.0);
     top: 427px;
     margin-left: -38px;
 }
 
 .dia-rise {
     position: absolute;
-    transform: rotateY(0deg) rotate(-45deg);
+    transition: 225ms ease-in-out;
+    transform: rotate(-45deg) scaleX(0.0);
     top: 427px;
     margin-left: -38px;
 }
 
-@media(max-width:430px){}
-@media(max-height:900px){}
+@media(max-width:430px) {}
+
+@media(max-height:900px) {}
