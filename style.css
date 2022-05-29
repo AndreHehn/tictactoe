@@ -1,3 +1,9 @@
+body{
+margin:0;
+background-image: url("./img/background.jpg");
+
+}
+
 tr {
     width: 405px;
 }
@@ -38,9 +44,13 @@ table tr td:last-child {
     border-right: 0;
 }
 
-.stamp {
-height: 90px;
-width: 90px;
+.cross {
+height: 135px;
+width: 135px;
+}
+.circle{
+    height:105px;
+    width:105px;
 }
 
 .d-none {
