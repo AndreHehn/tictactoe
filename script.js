@@ -1,5 +1,6 @@
 let fields = [];
 let currentPlayer = 0;
+let allStamps=0;
 let winner;
 let crossWin = 0;
 let circleWin = 0;
@@ -33,6 +34,7 @@ function crossMove(id) {
     checkWin();
     if (winning) {
         currentPlayer++;
+        allStamps++;
         changePlayerToCircle();
     }
 }
@@ -44,6 +46,7 @@ function circleMove(id) {
     checkWin();
     if (winning) {
         currentPlayer++;
+        allStamps++;
         changePlayerToCross();
     }
 
@@ -74,7 +77,7 @@ function checkWin() {
         }
     }
     if (
-        currentPlayer ===8 && winning) {
+        allStamps ==8 && winning) {
             winner = 'draw'; position = null;
         showWinner(winner);
     }
@@ -147,6 +150,7 @@ function newGame(n) {
 function contentForNewGame(n){
     fields = [];
     currentPlayer = n;
+    allStamps =0;
     document.getElementById('current-player').classList.remove('d-none');
     document.getElementById('winning').innerHTML ='';
     document.getElementById('winning').classList.remove('d-none');
