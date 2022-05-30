@@ -74,7 +74,7 @@ function checkWin() {
         }
     }
     if (
-        currentPlayer == 8 && winning) {
+        currentPlayer == 9 && winning) {
             winner = 'draw'; position = null;
         showWinner(winner);
     }
