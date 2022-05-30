@@ -74,6 +74,7 @@ function checkWin() {
             winning = true;
             position = i;
             showWinner(winner);
+            return;
         }
     }
     if (
