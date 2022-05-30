@@ -1,6 +1,6 @@
 let fields = [];
 let currentPlayer = 0;
-let allStamps=0;
+let allStamps = 0;
 let winner;
 let crossWin = 0;
 let circleWin = 0;
@@ -15,9 +15,9 @@ let possibleWin = [
     [2, 5, 8],
     [0, 4, 8],
     [2, 4, 6],
-]
+];
 
-//player equal cross ....player odd circle
+/*player equal cross ....player odd circle*/
 function stampSign(id) {
     if (currentPlayer % 2 == 0 && fields[id] == null) {
         crossMove(id);
@@ -66,7 +66,7 @@ function changePlayerToCircle() {
     document.getElementById('player').src = "./img/circle.png";
 }
 
-
+/*checks all possible results */
 function checkWin() {
     for (let i = 0; i < possibleWin.length; i++) {
         if (fields[possibleWin[i][0]] == fields[possibleWin[i][1]] && fields[possibleWin[i][1]] == fields[possibleWin[i][2]]) {
@@ -77,12 +77,17 @@ function checkWin() {
             return;
         }
     }
+    checkDraw();
+};
+
+
+function checkDraw() {
     if (
-        allStamps ==8 && winning) {
-            winner = 'draw'; position = null;
+        allStamps == 8 && winning) {
+        winner = 'draw'; position = null;
         showWinner(winner);
     }
-};
+}
 
 
 function showWinner(winner) {
@@ -100,8 +105,12 @@ function showWinner(winner) {
 
 function renderHtmlButtonsForShowWinner() {
     document.getElementById('buttons').innerHTML = `
-<div class="button" onclick="newGame(0)"><span>start new game with </span><img class="cross-button" src ="./img/cross.png"><span>first</span></div>
-<div class="button" onclick="newGame(1)"><span>start new game with </span><img class="circle-button" src ="./img/circle.png"><span>first</span></div>
+<div class="button" onclick="newGame(0)">
+<span>start new game with </span>
+<img class="cross-button" src ="./img/cross.png"><span>first</span></div>
+<div class="button" onclick="newGame(1)">
+<span>start new game with </span>
+<img class="circle-button" src ="./img/circle.png"><span>first</span></div>
 `;
 }
 
@@ -127,7 +136,7 @@ function makeUnclickable() {
     }
 }
 
-
+/*changes the number of wins */
 function renderWins() {
     document.getElementById('crosswin').innerHTML = `: ${crossWin} `;
     document.getElementById('circlewin').innerHTML = `: ${circleWin} `;
@@ -148,41 +157,34 @@ function newGame(n) {
 }
 
 
-function contentForNewGame(n){
+function contentForNewGame(n) {
     fields = [];
     currentPlayer = n;
-    allStamps =0;
+    allStamps = 0;
     document.getElementById('current-player').classList.remove('d-none');
-    document.getElementById('winning').innerHTML ='';
+    document.getElementById('winning').innerHTML = '';
     document.getElementById('winning').classList.remove('d-none');
-    
+
 }
 
 
 function contentForForLoopNewGame(i) {
-    if(i <3)
-    {document.getElementById('win' + i).setAttribute('style','');}
-    else if (i && i<6)
-    {document.getElementById('win' + i).setAttribute('style','');}
-    else if (i ==6)
-    {document.getElementById('win' + i).setAttribute('style','');}
-    else if (i ==7)
-    {document.getElementById('win' + i).setAttribute('style','');}
     document.getElementById('circle' + i).classList.add('d-none');
     document.getElementById('cross' + i).classList.add('d-none');
     document.getElementById('circle' + i).parentNode.setAttribute('onclick', `stampSign(${i})`);
+    if (i < 3) { document.getElementById('win' + i).setAttribute('style', ''); }
+    else if (i && i < 6) { document.getElementById('win' + i).setAttribute('style', ''); }
+    else if (i == 6) { document.getElementById('win' + i).setAttribute('style', ''); }
+    else if (i == 7) { document.getElementById('win' + i).setAttribute('style', ''); }
+
 }
 
-
+/*shows Line over winning row. */
 function showLine() {
     if (winner !== 'draw') {
-        if(position <3)
-        {document.getElementById('win' + position).style.transform = 'scaleX(1.0)';}
-        else if (position>2 && position<6)
-        {document.getElementById('win' + position).style.transform = 'scaleY(1.0)';}
-        else if (position ==6)
-        {document.getElementById('win' + position).style.transform = 'rotate(45deg) scaleX(1.0)';}
-        else if (position ==7)
-        {document.getElementById('win' + position).style.transform = 'rotate(-45deg) scaleX(1.0)';}
+        if (position < 3) { document.getElementById('win' + position).style.transform = 'scaleX(1.0)'; }
+        else if (position > 2 && position < 6) { document.getElementById('win' + position).style.transform = 'scaleY(1.0)'; }
+        else if (position == 6) { document.getElementById('win' + position).style.transform = 'rotate(45deg) scaleX(1.0)'; }
+        else if (position == 7) { document.getElementById('win' + position).style.transform = 'rotate(-45deg) scaleX(1.0)'; }
     }
 }
