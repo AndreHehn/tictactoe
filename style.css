@@ -10,6 +10,9 @@ body {
     align-items: center;
 }
 
+.inner-main{
+    position: relative;
+}
 tr {
     width: 408px;
     height: 136px;
@@ -168,7 +171,7 @@ header {
     position: absolute;
     left: auto;
     right: auto;
-    top: 286px;
+    top: calc(136px / 2 - 7px);
     margin-left: 32px;
 }
 
@@ -176,7 +179,7 @@ header {
     position: absolute;
     left: auto;
     right: auto;
-    top: 427px;
+    top: calc(136px + 136px / 2 + 2px);
     margin-left: 32px;
 }
 
@@ -184,7 +187,7 @@ header {
     position: absolute;
     left: auto;
     right: auto;
-    top: 570px;
+    top: calc(136px *2 + 136px / 2 + 7px);
     margin-left: 32px;
 }
 
@@ -201,31 +204,31 @@ header {
     position: absolute;
     left: auto;
     right: auto;
-    top: 256px;
-    margin-left: 65px;
+    top: 32px;
+    margin-left: calc(136px / 2 - 7px);
 }
 
 .ve-mid {
     position: absolute;
     left: auto;
     right: auto;
-    top: 256px;
-    margin-left: 209px;
+    top: 32px;
+    margin-left: calc(136px + 136px / 2 + 2px);
 }
 
 .ve-right {
     position: absolute;
     left: auto;
     right: auto;
-    top: 256px;
-    margin-left: 351px;
+    top: 32px;
+    margin-left:calc(136px *2 + 136px / 2 + 9px);
 }
 
 .diagonal-line {
 
     border-radius: 7px;
     height: 14px;
-    width: 501px;
+    width: 509px;
     background-color: rgba(0, 255, 0, 0.5);
 }
 
@@ -233,16 +236,16 @@ header {
     position: absolute;
     transition: 225ms ease-in-out;
     transform: rotate(45deg) scaleX(0.0);
-    top: 427px;
-    margin-left: -38px;
+    top: calc(136px + 136px / 2 );
+    margin-left: calc(-136px / 2 + 27px);
 }
 
 .dia-rise {
     position: absolute;
     transition: 225ms ease-in-out;
     transform: rotate(-45deg) scaleX(0.0);
-    top: 427px;
-    margin-left: -38px;
+    top: calc(136px + 136px / 2 );
+    margin-left: calc(-136px / 2 + 27px);
 }
 
 
@@ -288,18 +291,18 @@ header {
     }
     
     .ho-top {
-        top: 225px;
-        margin-left: 12px;
+        top: calc(103px / 2 - 7px);
+        margin-left: 14px;
     }
     
     .ho-mid {
-        top: 359px;
-        margin-left: 12px;
+        top: calc(103px + 103px / 2);
+        margin-left: 14x;
     }
     
     .ho-bot {
-        top: 446px;
-        margin-left: 12px;
+        top: calc(103px * 2 + 103px / 2 + 6px);
+        margin-left: 14px;
     }
     
     .vertical-line {
@@ -307,33 +310,32 @@ header {
     }
     
     .ve-left {
-        top: 192px;
-        margin-left: 46px;
+        top: 9px;
+        margin-left: calc(103px / 2 - 5px);
     }
     
     .ve-mid {
-        top: 192px;
-        margin-left: 156px;
+        top: 9px;
+        margin-left: calc(103px + 103px / 2);
     }
     
     .ve-right {
-        top: 192px;
-        margin-left: 266px;
+        top: 9px;
+        margin-left:calc(103px * 2 + 103px / 2 + 8px);
     }
     
     .diagonal-line {
-        width: 391px;
+        width: 424px;
     }
     
     .dia-fall {
-
-        top: 335px;
-        margin-left: -33px;
+        top:calc(103px  + 103px / 2 );
+        margin-left: -48px;
     }
     
     .dia-rise {
-        top: 335px;
-        margin-left: -33px;
+        top:calc(103px  + 103px / 2 );
+        margin-left: -51px;
     }
 }
 
@@ -346,44 +348,6 @@ header {
     table {
         margin-top: -18px;
     }
-    
-    .ho-top {
-        top: 153px;
-    }
-    
-    .ho-mid {
-        top: 264px;
-    }
-    
-    .ho-bot {
-        top: 374px;
-    }
-    
-    
-    .ve-left {
-        top: 120px;
-    }
-    
-    .ve-mid {
-        top: 120px;
-    }
-    
-    .ve-right {
-        top: 120px;
-    }
-    
-    .diagonal-line {
-        width: 391px;
-    }
-    
-    .dia-fall {
-        top: 263px;
-    }
-    
-    .dia-rise {
-        top: 263px;
-
-}
 }
 
 
@@ -426,18 +390,18 @@ header {
     }
     
     .ho-top {
-        top: 144px;
-        margin-left: 20px;
+        top: calc(83px / 2 - 7px);
+        margin-left: 21px;
     }
     
     .ho-mid {
-        top: 234px;
-        margin-left: 20px;
+        top: calc( 83px + 83px / 2);
+        margin-left: 21px;
     }
     
     .ho-bot {
-        top: 324px;
-        margin-left: 20px;
+        top: calc( 83px * 2 + 83px / 2 + 6px);
+        margin-left: 21px;
     }
     
     .vertical-line {
@@ -445,33 +409,33 @@ header {
     }
     
     .ve-left {
-        top: 131px;
-        margin-left: 36px;
+        top: 21px;
+        margin-left:calc(83px / 2 - 6px);
     }
     
     .ve-mid {
-        top: 131px;
-        margin-left: 126px;
+        top: 21px;
+        margin-left: calc( 83px + 83px / 2 + 1px);
     }
     
     .ve-right {
-        top: 131px;
-        margin-left: 216px;
+        top: 21px;
+        margin-left:calc( 83px * 2 + 83px / 2 + 8px);
     }
     
     .diagonal-line {
-        width: 302px;
+        width: 311px;
     }
     
     .dia-fall {
 
-        top: 235px;
-        margin-left: -16px;
+        top: calc(83px + 83px / 2 - 2px);
+        margin-left: -24px;
     }
     
     .dia-rise {
-        top: 235px;
-        margin-left: -16px;
+        top: calc(83px + 83px / 2 - 1px);
+        margin-left: -24px;
     }
     .circle-bottom {
         height: 28px;

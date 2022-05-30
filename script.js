@@ -69,16 +69,28 @@ function changePlayerToCircle() {
 /*checks all possible results */
 function checkWin() {
     for (let i = 0; i < possibleWin.length; i++) {
-        if (fields[possibleWin[i][0]] == fields[possibleWin[i][1]] && fields[possibleWin[i][1]] == fields[possibleWin[i][2]]) {
+       let a1 = possibleWin[i][0];
+       let a2 = possibleWin[i][1];
+       let a3 = possibleWin[i][2];
+        if (allTheSame(a1, a2, a3) && isNotNull(a1, a2, a3)) {
             winner = fields[possibleWin[i][0]];
             winning = true;
             position = i;
             showWinner(winner);
-            return;
-        }
-    }
+        };
+    };
     checkDraw();
-};
+}
+
+
+function allTheSame(a1, a2, a3) {
+     return fields[a1] == fields[a2] && fields[a2] == fields[a3];
+     }
+
+
+function isNotNull(a1, a2, a3) {
+     return fields[a1] !== null && fields[a2] !== null && fields[a3] !== null; 
+    }
 
 
 function checkDraw() {
