@@ -150,13 +150,19 @@ function contentForNewGame(n){
     document.getElementById('current-player').classList.remove('d-none');
     document.getElementById('winning').innerHTML ='';
     document.getElementById('winning').classList.remove('d-none');
+    
 }
 
 
 function contentForForLoopNewGame(i) {
-    if (i < 8) {
-        document.getElementById('win' + i).classList.add('d-none');
-    }
+    if(i <3)
+    {document.getElementById('win' + i).setAttribute('style','');}
+    else if (i && i<6)
+    {document.getElementById('win' + i).setAttribute('style','');}
+    else if (i ==6)
+    {document.getElementById('win' + i).setAttribute('style','');}
+    else if (i ==7)
+    {document.getElementById('win' + i).setAttribute('style','');}
     document.getElementById('circle' + i).classList.add('d-none');
     document.getElementById('cross' + i).classList.add('d-none');
     document.getElementById('circle' + i).parentNode.setAttribute('onclick', `stampSign(${i})`);

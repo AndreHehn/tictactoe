@@ -2,6 +2,9 @@ body {
     font-family: 'calibri';
     margin: 0;
     background-image: url("./img/background.jpg");
+    background-size: cover;
+    height:100vh;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -104,8 +107,8 @@ header {
 }
 
 .circle-button {
-    height: 14px;
-    width: 14px;
+    height: 18px;
+    width: 18px;
     margin-left: 4px;
     margin-right: 4px;
 }
@@ -242,6 +245,244 @@ header {
     margin-left: -38px;
 }
 
-@media(max-width:430px) {}
 
-@media(max-height:900px) {}
+@media(max-width:430px) {
+
+    tr {
+        width: 309px;
+        height: 103px;
+    }
+    
+    td {
+        height: 103px;
+        width: 103px;
+    }
+
+    table {
+        margin-top: 54px;
+    }
+
+    .cross {
+        height: 85px;
+        width: 85px;
+    }
+    
+    .circle {
+        height: 65px;
+        width: 65px;
+    }
+
+    .buttons {
+        margin-top: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:10px;
+    }
+    .button {
+        width: 188px;
+    }
+
+    .horizontal-line {
+        width: 300px;
+    }
+    
+    .ho-top {
+        top: 225px;
+        margin-left: 12px;
+    }
+    
+    .ho-mid {
+        top: 359px;
+        margin-left: 12px;
+    }
+    
+    .ho-bot {
+        top: 446px;
+        margin-left: 12px;
+    }
+    
+    .vertical-line {
+        height: 300px;
+    }
+    
+    .ve-left {
+        top: 192px;
+        margin-left: 46px;
+    }
+    
+    .ve-mid {
+        top: 192px;
+        margin-left: 156px;
+    }
+    
+    .ve-right {
+        top: 192px;
+        margin-left: 266px;
+    }
+    
+    .diagonal-line {
+        width: 391px;
+    }
+    
+    .dia-fall {
+
+        top: 335px;
+        margin-left: -33px;
+    }
+    
+    .dia-rise {
+        top: 335px;
+        margin-left: -33px;
+    }
+}
+
+@media(max-height:780px){
+
+    .header {
+        margin-top: 12px;
+    }
+
+    table {
+        margin-top: -18px;
+    }
+    
+    .ho-top {
+        top: 153px;
+    }
+    
+    .ho-mid {
+        top: 264px;
+    }
+    
+    .ho-bot {
+        top: 374px;
+    }
+    
+    
+    .ve-left {
+        top: 120px;
+    }
+    
+    .ve-mid {
+        top: 120px;
+    }
+    
+    .ve-right {
+        top: 120px;
+    }
+    
+    .diagonal-line {
+        width: 391px;
+    }
+    
+    .dia-fall {
+        top: 263px;
+    }
+    
+    .dia-rise {
+        top: 263px;
+
+}
+}
+
+
+@media (max-width:340px){
+
+    .header {
+        margin-top: 12px;
+    }
+
+    table {
+        margin-top: -18px;
+    }
+    
+    .evaluation {
+        gap: 12px;
+    }
+    
+    tr {
+        width: 249px;
+        height: 83px;
+    }
+    
+    td {
+        height: 83px;
+        width: 83px;
+    }
+
+    .cross {
+        height: 52px;
+        width: 52px;
+    }
+    
+    .circle {
+        height: 40px;
+        width: 40px;
+    }
+
+    .horizontal-line {
+        width: 220px;
+    }
+    
+    .ho-top {
+        top: 144px;
+        margin-left: 20px;
+    }
+    
+    .ho-mid {
+        top: 234px;
+        margin-left: 20px;
+    }
+    
+    .ho-bot {
+        top: 324px;
+        margin-left: 20px;
+    }
+    
+    .vertical-line {
+        height: 220px;
+    }
+    
+    .ve-left {
+        top: 131px;
+        margin-left: 36px;
+    }
+    
+    .ve-mid {
+        top: 131px;
+        margin-left: 126px;
+    }
+    
+    .ve-right {
+        top: 131px;
+        margin-left: 216px;
+    }
+    
+    .diagonal-line {
+        width: 302px;
+    }
+    
+    .dia-fall {
+
+        top: 235px;
+        margin-left: -16px;
+    }
+    
+    .dia-rise {
+        top: 235px;
+        margin-left: -16px;
+    }
+    .circle-bottom {
+        height: 28px;
+        width: 28px;
+    }
+    
+    .cross-bottom {
+        height: 36px;
+        width: 36px;
+    }
+    .evaluation-sub {
+font-size: 0.8rem;
+    }
+}
